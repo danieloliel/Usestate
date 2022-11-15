@@ -6,6 +6,7 @@ function App() {
     <div className="App">
      <h1>Usestate</h1>
      <p>Another line</p>
+     <p>Another line3</p>
      <Counter />
     </div>
   );
