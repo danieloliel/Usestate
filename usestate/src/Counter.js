@@ -20,9 +20,9 @@ function Counter() {
     return (
       <div>
        <h1>Counter</h1>
-       <p>Counter is at {count}</p>
-       <button onClick={incr}>Click to add 1 to counter.</button> <p></p>
-       <button onClick={clear}>Click to reset the counter</button>
+       <p><div class="button-29">{count}</div></p>
+       <button class="button-29"  onClick={incr}>Click to add 1 to counter.</button> <p></p>
+       <button class="button-29"  onClick={clear}>Click to reset the counter</button>
       </div>
     );
   }
