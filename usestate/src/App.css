@@ -29,7 +29,10 @@
     transform: rotate(360deg);
   }
 }
-
+.inputcss {
+  font: 15px/24px 'Muli', sans-serif; color: #333; width: 17%; box-sizing: border-box; letter-spacing: 1px;
+  text-align: center;
+}
 
 
 /* CSS */
