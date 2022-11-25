@@ -8,7 +8,7 @@ function Counter(props) {
         
         setCount(
             function(oldCount){
-                if((oldCount +delta)< maxNum){
+                if((oldCount +delta)<= maxNum){
                  return oldCount +delta;
             }
             else{ return 0}
