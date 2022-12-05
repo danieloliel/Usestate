@@ -13,15 +13,12 @@ function Counter(props) {
 
     useEffect(()=>{
       if(needMaxValue){
-        UpdateMaxVal(delta +maxVal)
+        UpdateMaxVal(delta+maxVal)
         getMaxVal(false)
-        
-               
       }
     },[needMaxValue,getMaxVal,UpdateMaxVal,delta,maxVal])
 
     function incr(){
-        
         setCount(
             function(oldCount){
                 if((oldCount +delta)<= maxNum){
@@ -30,7 +27,6 @@ function Counter(props) {
                 else{ return 0}
         },
         )
-      
     }
     
     function reset(){
@@ -40,13 +36,11 @@ function Counter(props) {
           getMaxVal(true);
        }
       
-      
     function together(){
       incr();
       getMaxVale();
     }
    
-
     return (
       <div>
        <h1>Counter</h1>
