@@ -15,11 +15,12 @@ function Counter(props) {
     function incr(){
         setCount(
             function(oldCount){ 
-                 if((oldCount +delta)> maxNum){
+              let output = oldCount + delta;
+                 if((output)> maxNum){
                   getCounter(0)
                   return 0 ; }
-                 getCounter(oldCount + delta)
-                 return oldCount + delta        
+                 getCounter(output)
+                 return output;        
         }
         )
     }
