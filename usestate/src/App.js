@@ -7,6 +7,7 @@ function App() {
   const [maxNum, setMaxNum]= useState(10);
   const [reset, setReset] = useState(false);
   const [maxVal, setMaxVal] = useState(0); 
+ 
 
   function handleDelta(event){
   setDelta(Number(event.target.value));
@@ -16,17 +17,18 @@ function App() {
   setMaxNum(Number(event.target.value));
     }
 
+ 
+
   function getReset(data){
    console.log(data);
    setReset(data);   ;
     }
+  
 
-  function UpdateMaxVal(currentMaxVal){
-  console.log(currentMaxVal);
-  if(currentMaxVal > maxVal){
-    setMaxVal(currentMaxVal)
-  }
-  }
+  function getCounter(counter){
+    if(counter > maxVal){
+    setMaxVal(counter)}
+    }
 
 
   return (
@@ -38,10 +40,10 @@ function App() {
      <p><input className='inputcss' type="number" value = {maxNum} onChange= {handleMaxNum}/></p>
      <p><h3>Maximum value: {maxVal} </h3></p>  
      <Counter delta= {delta} maxNum= {maxNum} getReset= {getReset} needToReset= {reset} 
-        UpdateMaxVal={UpdateMaxVal}/>
+        getCounter={getCounter}/>
      
      <Counter delta= {delta} maxNum= {maxNum} getReset= {getReset} needToReset= {reset}
-     UpdateMaxVal={UpdateMaxVal}/>
+     getCounter={getCounter}/>
     </div>
      );
   }
