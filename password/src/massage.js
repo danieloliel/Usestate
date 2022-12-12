@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function Massage(props) {
   
   const {input} = props;
   const[Strange,setStrange] = useState();
+
+  useEffect(()=>{
+  },[])
+
 
   function chackStrange(){
     if(input.length <=2){
@@ -16,8 +20,10 @@ function Massage(props) {
   }
   return (
     <div>
-    <h3><button className="button-29" onClick={chackStrange} >click</button> </h3>
+    <h3><button className="button-29" onClick={chackStrange} >Check strength</button> </h3>
     <p>{Strange}</p>
+
+  
     </div>
   );
 }
