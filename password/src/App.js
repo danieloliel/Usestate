@@ -20,7 +20,7 @@ function App() {
       <h1>Welcome</h1>
       <p><h3>Please enter password:</h3></p>
       <p><input className='inputcss'  onChange={handleChange} />
-      <button className='button-29'>Submit</button></p>
+      <button disabled >  Submit</button></p>
       
       
       <Massage input={input} />
