@@ -9,7 +9,7 @@ function Massage(props) {
     if(input.length <=2){
       setStrange("Short password")
     }
-    else if(2<input.length <=6){
+    else if(input.length <=6){
       setStrange("Medium password")
     }
     else if(input.length >7){setStrange("Strong password")}
