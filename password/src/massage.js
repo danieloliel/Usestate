@@ -3,7 +3,7 @@ import { useState,useEffect } from "react";
 function Massage(props) {
   
   const {input,setStrengthBole} = props;
-  const[Strange,setStrange] = useState("Weak password");
+  const[Strange,setStrange] = useState("");
 
   useEffect(()=>{
     if(input.length <=2){
