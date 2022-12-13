@@ -2,18 +2,22 @@ import { useState,useEffect } from "react";
 
 function Massage(props) {
   
-  const {input} = props;
-  const[Strange,setStrange] = useState("Short password");
+  const {input,setStrengthBole} = props;
+  const[Strange,setStrange] = useState("Weak password");
 
   useEffect(()=>{
     if(input.length <=2){
-      setStrange("Short password")
+      setStrange("Weak password")
+      setStrengthBole(true)
     }
-    else if(input.length <=6){
+    else if(input.length >2 && input.length <=6){
       setStrange("Medium password")
+      setStrengthBole(false)
     }
-    else if(input.length >7){setStrange("Strong password")}
-  },[setStrange,input])
+    else{setStrange("Strong password")
+    setStrengthBole(false)
+  }
+  },[setStrange,setStrengthBole,input])
 
 
 

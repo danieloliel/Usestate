@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import Massage from './massage';
 import './App.css';
 
@@ -13,23 +13,16 @@ function App() {
   function handleChange(e){
     setInput(e.target.value)
   }
-  useEffect(()=>{
-    if(input.length >2){
-      setStrengthBole(false)
-    }
-    else{setStrengthBole(true);}
-    },[setStrengthBole,input])
- 
 
   return (
     <div className="App">
       <h1>Welcome</h1>
       <p><h3>Please enter password:</h3></p>
-      <p><input className='inputcss'  onChange={handleChange} />
+      <p><input className='inputcss' type="password" onChange={handleChange} />
       <button  disabled={strengthBole}>Submit</button></p>
       
       
-      <Massage input={input} />
+      <Massage input={input} setStrengthBole={setStrengthBole}/>
       
 
     </div>
