@@ -7,7 +7,7 @@ import './App.css';
 function App() {
 
   
-  const [input, setInput] = useState(0);
+  const [input, setInput] = useState("");
   const [strengthBole, setStrengthBole] = useState(true);
 
   function handleChange(e){
