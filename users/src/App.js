@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function App() {
 
-  const [toDoList] = useState([{
+  const [userList] = useState([{
     "id": 1,
     "name": "Leanne Graham",
     "username": "Bret",
@@ -246,14 +246,14 @@ function App() {
     </tr>
     <td>
       {
-        toDoList.map(
-          toDo => (   <tr>{toDo.name}</tr> ))
+        userList.map(
+          user => (   <tr>{user.name}</tr> ))
           
         }
       </td>
       <td>
-        {toDoList.map(
-          toDo => (   <tr>{toDo.email}</tr> ))}
+        {userList.map(
+          user => (   <tr>{user.email}</tr> ))}
 </td>
 </table>       
         
