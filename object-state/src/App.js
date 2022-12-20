@@ -9,7 +9,8 @@ function App() {
     setToDo(e.target.value)
   }
   function AddItemToList(){
-    setToDoList(toDoList.push(toDo))
+    setToDoList([...toDoList,toDo])
+    console.log(toDoList)
   }
 
   return (

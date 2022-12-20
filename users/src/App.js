@@ -1,9 +1,9 @@
 import './App.css';
-import { useState } from 'react';
+
 
 function App() {
 
-  const [userList] = useState([{
+  const userList = [{
     "id": 1,
     "name": "Leanne Graham",
     "username": "Bret",
@@ -232,7 +232,7 @@ function App() {
       "catchPhrase": "Centralized empowering task-force",
       "bs": "target end-to-end models"
     }
-  }])
+  }]
   
 
   return (
