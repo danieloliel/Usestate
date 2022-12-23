@@ -1,9 +1,10 @@
 import './App.css';
-
+import { useState } from 'react';
 
 function App() {
-
-  const userList = [{
+  const [Name, setName] =useState('')
+  const [Email, setEmail] =useState('')
+ const [userList,setuserList] = useState( [{
     "id": 1,
     "name": "Leanne Graham",
     "username": "Bret",
@@ -232,13 +233,35 @@ function App() {
       "catchPhrase": "Centralized empowering task-force",
       "bs": "target end-to-end models"
     }
-  }]
-  
+  }])
 
+  function handleAddUser(e){
+    setName(e.target.value)
+    console.log(Name)
+  }
+  function handleAddEmail(e){
+    setEmail(e.target.value)
+    console.log(Email)
+  }
+  function AddItemToList(){
+    let addRow = {
+      name: Name,
+      email: Email }
+    
+    
+    setuserList([...userList,addRow])
+    
+    console.log(userList)
+  }
+  
+  
   return (
     <div className="App">
-
+      
      <h3>List of users</h3>
+     <p>Enter Name: <input className='inputcss' value={Name} onChange= {handleAddUser}/></p>
+     <p>Enter Email: <input className='inputcss' value={Email} onChange= {handleAddEmail}/></p>
+     <p><button onClick={AddItemToList} >Add to list</button></p>
      <table>
      <tr>
     <th>Name</th>
