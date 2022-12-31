@@ -5,9 +5,11 @@ contract Simplebank {
  // uint public funds = 500;    // קבוע שערכו 500 לעולמי עד
   function addFunds() external payable{ //מגדיר טרנזקציה ששולחת לחוזה החכם כסף
     funders.push(msg.sender);  // מכניס לרשימה את מי ששולח לי כסף
+    sendSum.push(msg.value);
   }
   
   address[] public funders;  //מסוג מערך fundrs משתנה שנקרא
+  uint[] public sendSum;
 }
 
 
