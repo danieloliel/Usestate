@@ -42,7 +42,7 @@ function getAllFunders() external view returns(address[] memory) { // אפשר �
   }
 
 function withdraw(uint withdrawAmount) external  {
- // require(withdrawAmount < 1000000000000000000 || msg.sender == owner, "You can't withdraw more then 1 ether"); //שומר סף למשיכת במשיכה אחת אסור למשוך יותר מ1 איתר
+  require(withdrawAmount < 1000000000000000000 || msg.sender == owner, "You can't withdraw more then 1 ether"); //שומר סף למשיכת במשיכה אחת אסור למשוך יותר מ1 איתר
  // כאשר הבעלים של החוזה לא מוגבל בסכום המשיכה
   payable (msg.sender).transfer(withdrawAmount);  //שליחת כסף מהבלוקציין למפקיד
 }
@@ -54,18 +54,21 @@ function withdraw(uint withdrawAmount) external  {
 }  
 
 
-
-
-
-//const instance = await Simplebank.deployed()
-//instance.addFunds({value:"500000000000000000", from: accounts[0]}) // העברה של חצי איתר ממשתמש 0 לחוזה החכם
-//instance.addFunds({value:"500000000000000000", from: accounts[1]}) //העברה של חצי איתר ממשתמש 1 לחוזה החכם
-
-//instance.getAllFunders()
-// כרגע אף אחד בעולם לא יכול למשוך את ה1 איתר שיש בחוזה החכם כי לא אפשרנו פונקציונליות כזאת עדיין
+//שלבים להעלאת החוזה
 //truffle migrate --reset 
 //דריסת החוזה הקודם ויצירת חוזה חדש
+//truffle console
+//העלאת החוזה לגאנש
+//const instance = await Simplebank.deployed()
 
-//instance.withdraw(1000000000000000000, {from: accounts[0]})
-//instance.withdraw(1000000000000000000)
+// הפקדה
+//instance.addFunds({value:"500000000000000000", from: accounts[0]}) // העברה של חצי איתר ממשתמש 0 לחוזה החכם
+//instance.addFunds({value:"500000000000000000", from: accounts[1]}) //העברה של חצי איתר ממשתמש 1 לחוזה החכם
+//instance.getAllFunders()
+
+//משיכה
+//instance.withdraw("1000000000000000000", {from: accounts[0]})
+//instance.withdraw("1000000000000000000")
+
+//החלפת בעלות
 //instance.transferOwnership("0x346861bd8A030B84E0Afc48d54f70f40B8d780d0")
